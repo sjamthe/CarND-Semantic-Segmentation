@@ -34,3 +34,5 @@ I applied the model on a [video](https://www.youtube.com/watch?v=OdZJMFDMVc8) ta
 ### Dataset
 Download the [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) from [here](http://www.cvlibs.net/download.php?file=data_road.zip).  Extract the dataset in the `data` folder.  This will create the folder `data_road` with all the training a test images.
 
+### Further Work
+Checkout other techniques of Semantic Segmentation outlined in [this](http://blog.qure.ai/notes/semantic-segmentation-deep-learning-review) blog.
