@@ -31,6 +31,6 @@ I applied the model on a [video](https://www.youtube.com/watch?v=OdZJMFDMVc8) ta
 [![Semantic Segmentation Video](https://img.youtube.com/vi/OdZJMFDMVc8/0.jpg)](https://www.youtube.com/watch?v=OdZJMFDMVc8)
 
 
-##### Dataset
+### Dataset
 Download the [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) from [here](http://www.cvlibs.net/download.php?file=data_road.zip).  Extract the dataset in the `data` folder.  This will create the folder `data_road` with all the training a test images.
 
