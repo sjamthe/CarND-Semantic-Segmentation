@@ -109,7 +109,8 @@ def gen_test_output(sess, logits, keep_prob, image_pl, data_folder, image_shape)
     :param image_shape: Tuple - Shape of image
     :return: Output for for each test image
     """
-    for image_file in glob(os.path.join(data_folder, 'image_2', '*.png')):
+    for image_file in glob(os.path.join(data_folder, 'input', '*.*')):
+        print (image_file)
         image = scipy.misc.imresize(scipy.misc.imread(image_file), image_shape)
 
         im_softmax = sess.run(
@@ -121,7 +122,7 @@ def gen_test_output(sess, logits, keep_prob, image_pl, data_folder, image_shape)
         mask = scipy.misc.toimage(mask, mode="RGBA")
         street_im = scipy.misc.toimage(image)
         street_im.paste(mask, box=None, mask=mask)
-
+        
         yield os.path.basename(image_file), np.array(street_im)
 
 
@@ -135,6 +136,6 @@ def save_inference_samples(runs_dir, data_dir, sess, image_shape, logits, keep_p
     # Run NN on test images and save them to HD
     print('Training Finished. Saving test images to: {}'.format(output_dir))
     image_outputs = gen_test_output(
-        sess, logits, keep_prob, input_image, os.path.join(data_dir, 'data_road/testing'), image_shape)
+        sess, logits, keep_prob, input_image, os.path.join(data_dir, 'test_movie'), image_shape)
     for name, image in image_outputs:
         scipy.misc.imsave(os.path.join(output_dir, name), image)
